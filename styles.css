@@ -1,0 +1,38 @@
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+p{
+  font-size: 15px;
+  margin: 0;
+  color: rgb(128, 135, 154);
+}
+
+h1 {
+  color: #303a5e;
+}
+
+.top-container {
+    background-color: rgb(241, 245, 254);
+    text-align: center;
+    padding-bottom: 150px;
+}
+
+.quarter-circle-top-right{
+     width: autp;
+     height: 100px;
+     background: rgb(241, 245, 254);
+     border-radius: 0 0 0 100px;
+     -moz-border-radius: 0 0 0 100px;
+     -webkit-border-radius: 0 0 0 100px;
+}
+
+.circles {
+  position: relative;
+  top: 130px;
+}
+
+.bottom-container {
+  background-color: #e0e1e5;
+}
