@@ -17,7 +17,10 @@
       <div class="quarter-circle-top-right"></div>
 
     <div class="window">
-
+      <p class='pageviews'> <span id="demo"></span> PAGEVIEWS</p>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="1000000" value="1" class="slider-view" id="myRange">
+      </div>
       <div class="slider-billing">
         <p class="billing">Monthly Billing</p>
         <label class="switch">
@@ -25,6 +28,9 @@
           <span class="slider round"></span>
         </label>
         <p class="billing">Yearly Billing</p>
+        <div class="discount">
+          <p class="discount">25% discount</p>
+        </div>
       </div>
 
       <hr>
@@ -40,5 +46,29 @@
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="https://www.frontendmentor.io/profile/Luci-netizen">Lucia Smidova</a>.
     </div>
+
+
+    <script>
+      var slider = document.getElementById("myRange");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value;
+
+      slider.oninput = function() {
+      output.innerHTML = this.value;
+  }
+  </script>
+  <script>
+  $('input[type="range"]').change(function () {
+      var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
+
+      $(this).css('background-image',
+                  '-webkit-gradient(linear, left top, right top, '
+                  + 'color-stop(' + val + ', #94A14E), '
+                  + 'color-stop(' + val + ', #C5C5C5)'
+                  + ')'
+                  );
+  });
+</script>
+
   </body>
     </html>
