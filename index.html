@@ -20,13 +20,13 @@
       <p class='pageview-styling'> <span id="pageviews"></span> PAGEVIEWS</p>
         <p> <span  class='price-styling'>$</span><span id="price-per-month"></span> /month</p>
       <div class="container">
-        <input type="range" min="0" max="100" step="25" value="50" />
+        <input id="pageViewsSlider" type="range" min="0" max="100" step="25" value="50" />
       </div>
 
       <div class="slider-billing">
         <p class="billing">Monthly Billing</p>
         <label class="switch">
-          <input type="checkbox" id="myCheck" oninput="myFunction()">
+          <input type="checkbox" id="myCheck" onclick="adjust_offer()">
           <span class="slider round"></span>
         </label>
         <p class="billing">Yearly Billing</p>
@@ -52,11 +52,9 @@
 
 
 <script>
-  function myFunction() {
-    var checkBox = document.getElementById("myCheck");
-    if (checkBox.checked == true){
-    price = price*0.75;
-  }}
+  function get_price_factor() {
+    return (document.getElementById("myCheck").checked == true) ? 0.75 : 1
+  }
 
   function calculate_pageviews(value) {
     if (value == 0) {
@@ -76,19 +74,20 @@
       price=36.00
     }
 
-      myFunction()
-
+    final_price = price * get_price_factor()
 
     document.getElementById("pageviews").innerHTML = views
-    document.getElementById("price-per-month").innerHTML = price
-
+    document.getElementById("price-per-month").innerHTML = final_price
   }
 
+  function adjust_offer() {
+    var slider = document.getElementById("pageViewsSlider");
 
-  calculate_pageviews(50)
+    calculate_pageviews(slider.value)
+  }
 
-
-
+  //calculate_pageviews(50)
+  adjust_offer()
 
   window.onload = function() {
   var input = document.querySelector('input[type=range]'),
@@ -114,7 +113,6 @@
     styles[0] = str;
     style_el.textContent = styles.join('');
     calculate_pageviews(this.value)
-    myFunction()
   }, false);
 }
 
