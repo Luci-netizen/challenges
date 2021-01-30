@@ -17,14 +17,16 @@
       <div class="quarter-circle-top-right"></div>
 
     <div class="window">
-      <p class='pageviews'> <span id="demo"></span> PAGEVIEWS</p>
-      <div class="slidecontainer">
-        <input type="range" min="1" max="1000000" value="1" class="slider-view" id="myRange">
+      <p class='pageview-styling'> <span id="pageviews"></span> PAGEVIEWS</p>
+        <p> <span  class='price-styling'>$</span><span id="price-per-month"></span> /month</p>
+      <div class="container">
+        <input type="range" min="0" max="100" step="25" value="50" />
       </div>
+
       <div class="slider-billing">
         <p class="billing">Monthly Billing</p>
         <label class="switch">
-          <input type="checkbox">
+          <input type="checkbox" id="myCheck" oninput="myFunction()">
           <span class="slider round"></span>
         </label>
         <p class="billing">Yearly Billing</p>
@@ -48,15 +50,77 @@
     </div>
 
 
-    <script>
-      var slider = document.getElementById("myRange");
-      var output = document.getElementById("demo");
-      output.innerHTML = slider.value;
 
-      slider.oninput = function() {
-      output.innerHTML = this.value;
+<script>
+  function myFunction() {
+    var checkBox = document.getElementById("myCheck");
+    if (checkBox.checked == true){
+    price = price*0.75;
+  }}
+
+  function calculate_pageviews(value) {
+    if (value == 0) {
+      views = "10K"
+      price=8.00
+    } else if (value == 25) {
+      views = "50K"
+      price=12.00
+    } else if (value == 50) {
+      views = "100K"
+      price=16.00
+    } else if (value == 75) {
+      views = "500K"
+      price=24.00
+    } else if (value == 100) {
+      views = "1M"
+      price=36.00
+    }
+
+      myFunction()
+
+
+    document.getElementById("pageviews").innerHTML = views
+    document.getElementById("price-per-month").innerHTML = price
+
   }
-  </script>
+
+
+  calculate_pageviews(50)
+
+
+
+
+  window.onload = function() {
+  var input = document.querySelector('input[type=range]'),
+    style_el = document.createElement('style'),
+    styles = [],
+    track_sel = ['::-webkit-slider-runnable-track'];
+  document.body.appendChild(style_el);
+
+  styles.push('');
+
+  var slider_value = 0
+
+  input.addEventListener('input', function() {
+    var min = this.min || 0,
+      max = this.max || 100,
+      val, str = '';
+
+    this.setAttribute('value', this.value);
+
+    val = this.value + '% 100%';
+    str += 'input[type="range"]' + track_sel[0] + '{background-size:' + val + '}';
+
+    styles[0] = str;
+    style_el.textContent = styles.join('');
+    calculate_pageviews(this.value)
+    myFunction()
+  }, false);
+}
+
+
+</script>
+
 
   </body>
     </html>
