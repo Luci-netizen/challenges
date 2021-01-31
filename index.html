@@ -17,8 +17,9 @@
       <div class="quarter-circle-top-right"></div>
 
     <div class="window">
-      <p class='pageview-styling'> <span id="pageviews"></span> PAGEVIEWS</p>
-        <p> <span  class='price-styling'>$</span><span id="price-per-month"></span> /month</p>
+      <p  class="pageview-styling"> <span id="pageviews"></span> PAGEVIEWS</p>
+      <p class="price-styling"> <span  class='dollar-styling'>$</span><span id="price-per-month"></span> / month</p>
+
       <div class="container">
         <input id="pageViewsSlider" type="range" min="0" max="100" step="25" value="50" />
       </div>
@@ -74,10 +75,13 @@
       price=36.00
     }
 
+
     final_price = price * get_price_factor()
+    fixed_price=final_price.toFixed(2)
+
 
     document.getElementById("pageviews").innerHTML = views
-    document.getElementById("price-per-month").innerHTML = final_price
+    document.getElementById("price-per-month").innerHTML = fixed_price
   }
 
   function adjust_offer() {
