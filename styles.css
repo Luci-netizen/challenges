@@ -83,9 +83,9 @@ a {
 
 }
 
-.slidecontainer {
+/* .slidecontainer {
   width: 100%;
-}
+} */
 
 
 .container {
@@ -320,10 +320,10 @@ input:checked + .slider:before {
 }
 
 
-@media only screen and (max-device-width: 480px)  {
+@media only screen and (max-device-width: 480px), only screen (max-width: 480px)  {
 
   .window{
-    width: 90%;
+    width: 50%;
     height: 600px;
   }
   .short-text{
@@ -339,6 +339,8 @@ input:checked + .slider:before {
     text-align: center;
   }
 .discount {display: none;}
+
+
 
   .pageview-styling{
 text-align: center;
