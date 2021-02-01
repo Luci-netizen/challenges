@@ -320,7 +320,7 @@ input:checked + .slider:before {
 }
 
 
-@media (max-width: 480px)  {
+@media screen and (max-width: 480px)  {
 
   .window{
     width: 90%;
