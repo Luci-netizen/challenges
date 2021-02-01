@@ -320,7 +320,8 @@ input:checked + .slider:before {
 }
 
 
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 40em), only screen and (max-device-width: 40em)  {
+
   .window{
     width: 90%;
     height: 600px;
