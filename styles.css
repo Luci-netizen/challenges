@@ -320,11 +320,36 @@ input:checked + .slider:before {
 }
 
 
-@media only screen and (max-device-width: 480px), only screen (max-width: 480px)  {
+/* @media only screen and (max-device-width: 480px), only screen and (max-width: 480px)  {
 
+p{
+  font-size: 35px;
+}
+
+.first-p {
+  width: 500px;
+  position: relative;
+  left: 200px;
+}
+.circles {
+  width:35%;
+  position: relative;
+  top:330px;
+}
+ .top-container {
+   font-size: 28px;
+   position: relative;
+   bottom: 280px;
+
+ }
+ .quarter-circle-top-right{
+   position: relative;
+   bottom: 280px;
+ }
   .window{
-    width: 50%;
-    height: 600px;
+    width: 90%;
+    height: 1000px;
+    bottom: 500px;
   }
   .short-text{
     background-color: #fff0e4;
@@ -344,7 +369,7 @@ input:checked + .slider:before {
 
   .pageview-styling{
 text-align: center;
-    left:130px;
+    left:250px;
   }
 
 .price-styling {
@@ -379,4 +404,4 @@ top: 390px;
     left:150px;
     position:relative;
   }
-}
+} */
