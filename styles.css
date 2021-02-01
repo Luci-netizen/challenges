@@ -270,10 +270,15 @@ input:checked + .slider:before {
   color: #de9282;
   border-radius: 40px;
   width: 85px;
+  left:405px;
+  bottom: 39px;
   font-size: 10px;
+  position: relative;
+
   display: inline-block;
   text-align: center;
 }
+.short-text { display: none; }
 
 .btn {
 	background-color:#2a3356;
@@ -314,29 +319,45 @@ input:checked + .slider:before {
 
 }
 
-@media only screen and (max-width: 600px) {
 
-  .pageview-styling{
-
-text-align: center;
-    left:130px;
-  }
-  .price-styling {
-    top:120px;
-    right:160px;
-    text-align: center;
-  }
+@media only screen and (max-width: 40%) {
   .window{
     width: 90%;
     height: 600px;
   }
+  .short-text{
+    background-color: #fff0e4;
+    color: #de9282;
+    border-radius: 40px;
+    width: 85px;
+    left:335px;
+    top:80px;
+    font-size: 10px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+  }
+.discount {display: none;}
+
+  .pageview-styling{
+text-align: center;
+    left:130px;
+  }
+
+.price-styling {
+    top:160px;
+    right:160px;
+    width:250px;
+
+  }
+
 .slider-billing{
 left: 60px;
-top:80px;
+top:120px;
 }
 
 hr {
-top: 110px;
+top: 140px;
 position:relative;
 
 }
@@ -345,13 +366,15 @@ ul {
   position: absolute;
   text-align: center;
   left:120px;
-top: 370px;
+top: 390px;
 }
 
 .btn{
-    display: block;
-    margin: 0 0 0 -180px;
+
     width: 100px;
-    position: absolute;
+    top: 280px;
+    left:150px;
+
+    position:relative;
   }
 }
