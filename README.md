@@ -1,5 +1,8 @@
 # Frontend Mentor - Interactive pricing component
 
+
+The link for the webpage is here: https://luci-netizen.github.io/challenges/
+
 ![Design preview for the Interactive pricing component coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
